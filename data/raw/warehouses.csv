@@ -1,0 +1,4 @@
+warehouse_id,name,lat,lon,daily_capacity
+WH_KOL,Kolkata (Dankuni),22.68,88.29,900
+WH_HAL,Haldia,22.06,88.07,550
+WH_DGP,Durgapur,23.55,87.32,700

@@ -1,0 +1,154 @@
+{
+  "cleaning_audit": {
+    "rows_raw": 22060,
+    "duplicates_removed": 60,
+    "missing_before": {
+      "traffic_index": 440,
+      "weight_kg": 220
+    },
+    "outliers_removed": 40,
+    "rows_clean": 21960,
+    "remaining_nulls": 0
+  },
+  "kpi_baseline": {
+    "on_time_delivery_pct": 82.8,
+    "avg_delay_hours": 0.1,
+    "cost_per_km_inr": 21.8,
+    "cost_per_tonne_km_inr": 21.0,
+    "otd_dry_pct": 92.2,
+    "otd_rain_pct": 51.6
+  },
+  "delay_models": {
+    "linear_MAE_h": 0.366,
+    "linear_R2": 0.371,
+    "gbm_MAE_h": 0.318,
+    "gbm_R2": 0.545,
+    "baseline_MAE_h(predict mean)": 0.441,
+    "late_risk_AUC": 0.81,
+    "late_rate_test": 0.17
+  },
+  "clustering": {
+    "best_k": 3,
+    "silhouette": {
+      "2": 0.354,
+      "3": 0.398,
+      "4": 0.298,
+      "5": 0.298,
+      "6": 0.277,
+      "7": 0.267
+    },
+    "profiles": [
+      {
+        "cluster": 0,
+        "customers": 29,
+        "mean_demand": 46.85,
+        "avg_distance_km": 100.88,
+        "late_rate": 0.16
+      },
+      {
+        "cluster": 1,
+        "customers": 9,
+        "mean_demand": 39.93,
+        "avg_distance_km": 387.24,
+        "late_rate": 0.22
+      },
+      {
+        "cluster": 2,
+        "customers": 2,
+        "mean_demand": 46.63,
+        "avg_distance_km": 28.78,
+        "late_rate": 0.16
+      }
+    ]
+  },
+  "forecast": {
+    "per_warehouse": {
+      "WH_DGP": {
+        "WAPE_model_%": 5.95,
+        "WAPE_seasonal_naive_%": 8.96
+      },
+      "WH_HAL": {
+        "WAPE_model_%": 5.46,
+        "WAPE_seasonal_naive_%": 8.29
+      },
+      "WH_KOL": {
+        "WAPE_model_%": 7.32,
+        "WAPE_seasonal_naive_%": 8.28
+      }
+    },
+    "network_WAPE_model_%": 4.98,
+    "network_WAPE_naive_%": 6.75
+  },
+  "inventory_sim": {
+    "WH_DGP": {
+      "baseline_fill_rate": 1.0,
+      "baseline_avg_stock": 919.692,
+      "forecast_fill_rate": 1.0,
+      "forecast_avg_stock": 810.41
+    },
+    "WH_HAL": {
+      "baseline_fill_rate": 1.0,
+      "baseline_avg_stock": 635.781,
+      "forecast_fill_rate": 1.0,
+      "forecast_avg_stock": 604.834
+    },
+    "WH_KOL": {
+      "baseline_fill_rate": 1.0,
+      "baseline_avg_stock": 624.52,
+      "forecast_fill_rate": 1.0,
+      "forecast_avg_stock": 510.942
+    }
+  },
+  "allocation": {
+    "current_avg_km_per_unit": 155.5,
+    "optimised_avg_km_per_unit": 141.5,
+    "km_reduction_pct": 9.0,
+    "warehouse_load_units": {
+      "WH_KOL": 623.3,
+      "WH_HAL": 542.4,
+      "WH_DGP": 700.0
+    },
+    "capacity": {
+      "WH_KOL": 900,
+      "WH_HAL": 550,
+      "WH_DGP": 700
+    }
+  },
+  "routing": {
+    "WH_KOL": {
+      "customers": 14,
+      "vehicles_needed": 2,
+      "direct_km": 2892,
+      "nearest_neighbour_km": 2069,
+      "optimised_km": 1495,
+      "km_saved_vs_direct_pct": 48.3,
+      "km_saved_vs_nn_pct": 27.7
+    },
+    "WH_HAL": {
+      "customers": 12,
+      "vehicles_needed": 2,
+      "direct_km": 3594,
+      "nearest_neighbour_km": 1516,
+      "optimised_km": 1146,
+      "km_saved_vs_direct_pct": 68.1,
+      "km_saved_vs_nn_pct": 24.4
+    },
+    "WH_DGP": {
+      "customers": 15,
+      "vehicles_needed": 3,
+      "direct_km": 6457,
+      "nearest_neighbour_km": 3185,
+      "optimised_km": 1916,
+      "km_saved_vs_direct_pct": 70.3,
+      "km_saved_vs_nn_pct": 39.8
+    }
+  },
+  "routing_total": {
+    "direct_km": 12943,
+    "nearest_neighbour_km": 6770,
+    "optimised_km": 4557,
+    "km_saved_vs_direct_pct": 64.8,
+    "km_saved_vs_nn_pct": 32.7,
+    "daily_saving_vs_nn_inr": 61964
+  }
+}
